@@ -1,22 +1,37 @@
+import axios from 'axios';
 import { createContext, useState } from 'react';
 
 export const CustomContext = createContext();
 
 const Context = ({ children }) => {
-  const [gender,setGender] = useState('men')
+  const [gender, setGender] = useState('men');
   const [category, setCategory] = useState('t-short');
+  const [products, setProducts] = useState({
+    data: [],
+    error: '',
+  });
 
   const changeGender = (gender) => {
-    setGender(gender)
-  }
+    setGender(gender);
+  };
   const changeCategory = (category) => {
     setCategory(category);
-  }
+  };
 
+  const getProducts = () => {
+    axios
+      .get('http://localhost:4444/catalog')
+      .then(({ data }) => setProducts({ ...products, data: data }))
+      .catch((error) => setProducts({ ...products, error: error }));
+  };
 
   const value = {
     changeGender,
-    changeCategory,gender,category
+    changeCategory,
+    gender,
+    category,
+    getProducts,
+    products,
   };
   return (
     <>

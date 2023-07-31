@@ -54,25 +54,25 @@ function Home() {
               image={popularImage1}
               type="Classic shoes"
               deleteCost="3800 UAH"
-              cost="6100 UAH"
+              price="6100 UAH"
             />
             <Card
               image={popularImage2}
               type="Classic shoes"
               deleteCost="3800 UAH"
-              cost="6100 UAH"
+              price="6100 UAH"
             />
             <Card
               image={popularImage3}
               type="Classic shoes"
               deleteCost="3800 UAH"
-              cost="6100 UAH"
+              price="6100 UAH"
             />
             <Card
               image={popularImage4}
               type="Classic shoes"
               deleteCost="3800 UAH"
-              cost="6100 UAH"
+              price="6100 UAH"
             />
           </div>
         </div>
