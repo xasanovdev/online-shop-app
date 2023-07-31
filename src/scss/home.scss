@@ -1,0 +1,149 @@
+.home {
+  position: relative;
+  width: 100%;
+
+  &__hero {
+    background-repeat: no-repeat;
+    background-image: url('../assets/Group\ 151.png');
+    &-bg {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding-top: 162px;
+    padding-bottom: 255px;
+    color: aliceblue;
+
+    &-first,
+    &-end {
+      text-align: center;
+      font-family: Avenir;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.72px;
+      text-transform: uppercase;
+    }
+    &-primer {
+      font-family: Cormorant;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  .collection {
+    z-index: -2;
+    overflow: hidden;
+    position: relative;
+    background: #cec6c4;
+    width: 100%;
+    margin-top: 119px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 70px;
+    gap: 100px;
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 15px;
+      z-index: 777;
+      color: #fff;
+
+      h1 {
+        font-family: Cormorant Garamond;
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 102.5%; /* 92.25px */
+        text-transform: uppercase;
+      }
+    }
+    &__left {
+      max-width: 640px;
+      max-height: 700px;
+      &-bg {
+        position: absolute;
+        left: -50px;
+        top: 0;
+        z-index: -1;
+      }
+    }
+
+    &__right {
+      width: 50%;
+      background-color: #fff;
+      &-content {
+        padding: 110px;
+      }
+    }
+  }
+
+  .popular {
+    position: relative;
+    text-align: center;
+    margin-top: 120px;
+
+    &__content {
+      margin-top: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 95px;
+    gap: 10px;
+    span {
+      width: 100%;
+      height: 1px;
+      background: #eae9e8;
+    }
+  }
+  .about {
+    position: relative;
+    background: #254a5a;
+    margin-top: 81px;
+    color: #cec6c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 250px;
+    gap: 76px;
+
+    &__left {
+      max-width: 40%;
+    }
+    &__title {
+      color: #eae9e8;
+      font-family: Cormorant Garamond;
+      font-size: 90px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 90%;
+      text-transform: uppercase;
+    }
+    &__right {
+      position: relative;
+      img {
+        transform: translateY(80px);
+      }
+    }
+  }
+}

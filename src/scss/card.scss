@@ -1,0 +1,35 @@
+.card {
+  &__title {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 29px;
+
+  &-link {
+    font-weight: bolder;
+    font-size: 20px;
+  }
+  &-cost {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .cost-del {
+    color: #cecece;
+    text-align: center;
+    font-family: Jost;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.63px;
+    text-transform: uppercase;
+  }
+  .cost-active {
+    color: red;
+  }
+}
+
+}

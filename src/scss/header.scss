@@ -1,0 +1,51 @@
+.header {
+  position: relative;
+  
+  border-bottom: 2px solid #000 ;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 109px;
+    padding: 20px 0px;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 281px;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &-field {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+    }
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 57px;
+  }
+  &__lang,
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+&-link {
+  cursor: pointer;
+}
+    &-link.active {
+      color: red;
+      border-bottom:1px solid red ;
+    }
+  }
+}

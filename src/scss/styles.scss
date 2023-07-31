@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Nunito+Sans:wght@300;600;900&display=swap');
+@import 'home';
+@import 'header';
+@import 'BreadCrumbs';
+@import 'catalog';
+@import 'sideBar';
+@import 'catalogMain';
+@import 'card';
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: 'Cormorant', serif;  
+
+}
+.container {
+  max-width: 1374px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.container-small {
+  max-width: 1137px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
