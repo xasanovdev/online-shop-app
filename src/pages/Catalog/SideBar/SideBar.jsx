@@ -22,7 +22,7 @@ export default function SideBar() {
           className={`sideBar__lang-link ${gender === 'men' ? 'active' : ''}`}
         >
           Мужчины
-        </p>
+        </p>    
       </div>
       <ul className="sidebar__menu">
         <SideBarItem value={'t-short'} text={t('catalog.aside3')} />
