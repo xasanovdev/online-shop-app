@@ -6,7 +6,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Catalog from './pages/Catalog/Catalog';
 import NotFound from './pages/NotFound/NotFound';
-import './i18n'
+import './i18n/i18n'
 
 function App() {
   return (

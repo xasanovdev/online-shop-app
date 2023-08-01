@@ -19,8 +19,7 @@ const Context = ({ children }) => {
   };
 
   const getProducts = () => {
-    axios
-      .get('http://localhost:4444/catalog')
+    axios(`http://localhost:4444/catalog?gender=${gender}&category=${category}`)
       .then(({ data }) => setProducts({ ...products, data: data }))
       .catch((error) => setProducts({ ...products, error: error }));
   };

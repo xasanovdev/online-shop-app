@@ -10,7 +10,7 @@ export default function CatalogTitle() {
   return (
     <>
       {category === 't-short' ? t('catalog.aside3') : ''}
-      {category === 'sweatshirt' ? t('catalog.aside4') : ''}
+      {category === 'sweatshirts' ? t('catalog.aside4') : ''}
       {category === 'pants' ? t('catalog.aside5') : ''}
       {category === 'shoes' ? t('catalog.aside6') : ''}
     </>

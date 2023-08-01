@@ -6,11 +6,11 @@ import CatalogTitle from '../../components/CatalogTitle/CatalogTitle';
 import { CustomContext } from '../../utils/context';
 
 export default function Catalog() {
-  const {category, getProducts } = useContext(CustomContext);
+  const { gender, category, getProducts } = useContext(CustomContext);
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [gender, category]);
 
   return (
     <section className="catalog">

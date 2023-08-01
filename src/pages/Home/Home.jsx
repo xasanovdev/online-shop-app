@@ -49,7 +49,7 @@ function Home() {
 
         <div className="popular container">
           <h1 className="popular__header">{t('popular.title')}</h1>
-          <div className="popular__content">
+          {/* <div className="popular__content">
             <Card
               image={popularImage1}
               type="Classic shoes"
@@ -74,7 +74,7 @@ function Home() {
               deleteCost="3800 UAH"
               price="6100 UAH"
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="logo">

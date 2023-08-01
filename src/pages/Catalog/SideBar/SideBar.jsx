@@ -12,8 +12,8 @@ export default function SideBar() {
     <aside className="sideBar">
       <div className="sideBar__lang">
         <p
-          onClick={() => changeGender('women')}
-          className={`sideBar__lang-link ${gender === 'women' ? 'active' : ''}`}
+          onClick={() => changeGender('woman')}
+          className={`sideBar__lang-link ${gender === 'woman' ? 'active' : ''}`}
         >
           Женщины
         </p>
@@ -26,7 +26,7 @@ export default function SideBar() {
       </div>
       <ul className="sidebar__menu">
         <SideBarItem value={'t-short'} text={t('catalog.aside3')} />
-        <SideBarItem value={'sweatshirt'} text={t('catalog.aside4')} />
+        <SideBarItem value={'sweatshirts'} text={t('catalog.aside4')} />
         <SideBarItem value={'pants'} text={t('catalog.aside5')} />
         <SideBarItem value={'shoes'} text={t('catalog.aside6')} />
       </ul>
