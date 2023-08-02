@@ -15,6 +15,7 @@ const Product = () => {
       setProduct(data)
     );
   }, []);
+  console.log(product);
 
   if (JSON.stringify(product) === '{}') {
     return <h2>...Loading</h2>;

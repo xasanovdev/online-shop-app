@@ -21,14 +21,14 @@ const Context = ({ children }) => {
     setGender(gender);
     setPrice('');
     setSize('');
+    setBrand('');
     setPage(1);
-    setBrand('')
   };
   const changeCategory = (category) => {
     setCategory(category);
     setSize('');
     setPrice('');
-    setBrand('')
+    setBrand('');
     setPage(1);
   };
 

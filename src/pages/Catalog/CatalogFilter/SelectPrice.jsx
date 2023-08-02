@@ -8,10 +8,11 @@ import { useContext } from 'react';
 import { CustomContext } from '../../../utils/context';
 
 export default function SelectPrice() {
-  const {price,setPrice} = useContext(CustomContext)
+  const {price,setPrice,setPage} = useContext(CustomContext)
 
   const changeHandler = (e) => {
     setPrice(e.target.value)
+    setPage(1)
   }
 
   return (

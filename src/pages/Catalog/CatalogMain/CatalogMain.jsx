@@ -22,8 +22,8 @@ export default function CatalogMain() {
           })
           .map((product) => (
             <Card
-              id={product.id}
               key={product.id}
+              id={product.id}
               brand={product.brand}
               title={product.title}
               img={product.img}
@@ -32,7 +32,7 @@ export default function CatalogMain() {
           ))}
       </div>
       <ul className="catalog__pagination">
-        {new Array(Math.ceil(products.dataLength / 6))
+        {new Array(Math.floor(products.dataLength / 6))
           .fill(null)
           .map((item, idx) => (
             <li
