@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import CatalogTitle from '../../../components/CatalogTitle/CatalogTitle';
 
 export default function BreadCrumbs() {
-  const { category, gender } = useContext(CustomContext);
+  const { gender } = useContext(CustomContext);
 
   const { t } = useTranslation();
 

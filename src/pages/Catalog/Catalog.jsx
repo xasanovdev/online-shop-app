@@ -4,13 +4,15 @@ import SideBar from './SideBar/SideBar';
 import CatalogMain from './CatalogMain/CatalogMain';
 import CatalogTitle from '../../components/CatalogTitle/CatalogTitle';
 import { CustomContext } from '../../utils/context';
+import CatalogFilter from './CatalogFilter/CatalogFilter';
 
 export default function Catalog() {
-  const { gender, category, getProducts } = useContext(CustomContext);
+  const { gender, category, getProducts, price, size, brand } =
+    useContext(CustomContext);
 
   useEffect(() => {
     getProducts();
-  }, [gender, category]);
+  }, [gender, category, price, size, brand]);
 
   return (
     <section className="catalog">
@@ -23,6 +25,7 @@ export default function Catalog() {
               <CatalogTitle />
             </div>
             <div className="catalog__main">
+              <CatalogFilter />
               <CatalogMain />
             </div>
           </main>
