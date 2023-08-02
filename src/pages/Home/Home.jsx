@@ -87,7 +87,7 @@ function Home() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0_68_143)">
+              <g clipPath="url(#clip0_68_143)">
                 <path
                   d="M9.28838 13.8115L8.38716 11.397H2.44565L1.47902 13.8115H0L5.55631 0L10.7892 13.8115H9.28838ZM5.4909 3.46355L2.85265 10.2626H7.95835L5.4909 3.46355Z"
                   fill="#EAE9E8"

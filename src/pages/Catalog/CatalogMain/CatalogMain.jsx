@@ -13,7 +13,7 @@ export default function CatalogMain() {
               ? product.sizes.find((element) =>
                   size ? element.size === size : element
                 ).inStock
-              : product
+              : product;
           })
           .filter((product, index) => {
             return page === 1
@@ -22,6 +22,7 @@ export default function CatalogMain() {
           })
           .map((product) => (
             <Card
+              id={product.id}
               key={product.id}
               brand={product.brand}
               title={product.title}
