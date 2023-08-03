@@ -1,71 +1,181 @@
 import axios from 'axios';
-import { createContext, useState } from 'react';
+import { createContext, useReducer, useState } from 'react';
 
 export const CustomContext = createContext();
 
+export const reducer = (state, action) => {
+  switch (action.type) {
+    case 'changeGender':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          gender: action.payload,
+          page: 1,
+          brand: '',
+        },
+      };
+
+    case 'changeCategory':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          category: action.payload,
+          page: 1,
+          brand: '',
+          size: '',
+        },
+      };
+
+    case 'setProducts':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          products: {
+            data: action.payload.data,
+            dataLength: action.payload.dataLength,
+            error: action.payload.error,
+          },
+        },
+      };
+
+    case 'catchProducts':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          products: {
+            error: action.payload.error,
+            dataLength: 0,
+            data: [],
+          },
+        },
+      };
+
+    case 'setBrands':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          brands: action.payload,
+        },
+      };
+
+    case 'changeBrand':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          brand: action.payload.brand,
+          page: 1,
+        },
+      };
+
+    case 'changePrice':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          price: action.payload.price,
+          page: action.payload.page,
+        },
+      };
+
+    case 'changeSize':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          size: action.payload.size,
+          page: 1,
+          products: {
+            ...state.catalog.products,
+            dataLength: action.payload.length,
+          },
+        },
+      };
+
+    case 'changePage':
+      return {
+        ...state,
+        catalog: {
+          ...state.catalog,
+          page: action.payload,
+        },
+      };
+    default:
+      return state;
+  }
+};
+function init(initialState) {
+  return { ...initialState };
+}
+
 const Context = ({ children }) => {
-  const [gender, setGender] = useState('men');
-  const [category, setCategory] = useState('t-short');
-  const [price, setPrice] = useState('');
-  const [brands, setBrands] = useState([]);
-  const [brand, setBrand] = useState('');
-  const [size, setSize] = useState('');
-  const [page, setPage] = useState(1);
-  const [products, setProducts] = useState({
-    data: [],
-    error: '',
-    dataLength: 0,
-  });
+  const [state, dispatch] = useReducer(
+    reducer,
+    {
+      catalog: {
+        gender: 'woman',
+        category: 't-short',
+        price: '',
+        page: 1,
+        size: '',
+        brands: [],
+        brand: '',
+        products: {
+          data: [],
+          error: '',
+          dataLength: 0,
+        },
+      },
+    },
+    init
+  );
 
   const changeGender = (gender) => {
-    setGender(gender);
-    setPrice('');
-    setSize('');
-    setBrand('');
-    setPage(1);
+    dispatch({ type: 'changeGender', payload: gender });
   };
   const changeCategory = (category) => {
-    setCategory(category);
-    setSize('');
-    setPrice('');
-    setBrand('');
-    setPage(1);
+    dispatch({ type: 'changeCategory', payload: category });
   };
 
   const getProducts = () => {
     axios(
-      `http://localhost:4444/catalog?gender=${gender}&category=${category}${
-        price !== '' ? '&_sort=price&_order=' + price : ''
-      }${brand !== '' ? '&brand=' + brand : ''}`
+      `http://localhost:4444/catalog?gender=${state.catalog.gender}&category=${
+        state.catalog.category
+      }${
+        state.catalog.price !== ''
+          ? '&_sort=price&_order=' + state.catalog.price
+          : ''
+      }${state.catalog.brand !== '' ? '&brand=' + state.catalog.brand : ''}`
     )
       .then(({ data }) => {
-        setProducts({ data: data, dataLength: data.length, error: '' });
+        dispatch({
+          type: 'setProducts',
+          payload: { data: data, dataLength: data.length, error: '' },
+        });
         axios(
-          `http://localhost:4444/brands?category=${category}&gender=${gender}`
+          `http://localhost:4444/brands?category=${state.catalog.category}&gender=${state.catalog.gender}`
         )
-          .then(({ data }) => setBrands(data[0].brand))
+          .then(({ data }) => {
+            dispatch({ type: 'setBrands', payload: { data: data[0].brand } });
+          })
           .catch(() => alert('topilmadi brendlar'));
       })
-      .catch((error) => setProducts({ error: error, dataLength: 0, data: [] }));
+      .catch((error) => {
+        dispatch({ type: 'catchProducts', payload: { error: error } });
+      });
   };
 
   const value = {
+    dispatch,
+    state,
     changeGender,
     changeCategory,
-    gender,
-    category,
     getProducts,
-    products,
-    page,
-    setPage,
-    price,
-    setPrice,
-    size,
-    setSize,
-    brand,
-    brands,
-    setBrand,
-    setBrands,
   };
   return (
     <>

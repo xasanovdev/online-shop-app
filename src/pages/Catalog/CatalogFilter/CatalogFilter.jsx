@@ -16,10 +16,6 @@ export default function CatalogFilter() {
       <div className="filter__select">
         <SelectBrand />
       </div>
-
-      <div className="filter__select">
-        <BasicSelect />
-      </div>
     </div>
   );
 }

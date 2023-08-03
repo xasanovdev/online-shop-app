@@ -7,12 +7,18 @@ import { CustomContext } from '../../utils/context';
 import CatalogFilter from './CatalogFilter/CatalogFilter';
 
 export default function Catalog() {
-  const { gender, category, getProducts, price, size, brand } =
-    useContext(CustomContext);
+  const { state, getProducts,gerBrands } = useContext(CustomContext);
+  
 
   useEffect(() => {
     getProducts();
-  }, [gender, category, price, size, brand]);
+  }, [
+    state.catalog.gender,
+    state.catalog.category,
+    state.catalog.price,
+    state.catalog.size,
+    state.catalog.brand,
+  ]);
 
   return (
     <section className="catalog">

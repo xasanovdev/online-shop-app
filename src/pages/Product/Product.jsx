@@ -23,7 +23,7 @@ const Product = () => {
   return (
     <section className="product">
       <div className="container">
-        <BreadCrumbs />
+        <BreadCrumbs title={product.title}/>
       </div>
       <div className="container-small">
         <div className="product__row">

@@ -8,11 +8,13 @@ import { useContext } from 'react';
 import { CustomContext } from '../../../utils/context';
 
 export default function SelectBrand() {
-  const { brand, brands, setBrand, setPage } = useContext(CustomContext);
+  const { state, dispatch } = useContext(CustomContext);
 
   const handleChange = (event) => {
-    setBrand(event.target.value);
-    setPage(1);
+    dispatch({
+      type: 'changeBrand',
+      payload: {brand: event.target.value },
+    });
   };
 
   return (
@@ -22,16 +24,16 @@ export default function SelectBrand() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={brand}
+          value={state.catalog.brand}
           label="Brand"
           onChange={handleChange}
         >
-          {brands.map((item) => (
+          {state.catalog.brands.data && state.catalog.brands.data.map((item) => (
             <MenuItem key={item} value={item}>
               {item}
             </MenuItem>
           ))}
-          <MenuItem value=''>Remove</MenuItem>
+          <MenuItem value="">Remove</MenuItem>
         </Select>
       </FormControl>
     </Box>

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import SideBarItem from './SideBarItem';
 
 export default function SideBar() {
-  const { gender, changeGender } = useContext(CustomContext);
+  const { state, changeGender } = useContext(CustomContext);
 
   const { t } = useTranslation();
 
@@ -13,16 +13,20 @@ export default function SideBar() {
       <div className="sideBar__lang">
         <p
           onClick={() => changeGender('woman')}
-          className={`sideBar__lang-link ${gender === 'woman' ? 'active' : ''}`}
+          className={`sideBar__lang-link ${
+            state.catalog.gender === 'woman' ? 'active' : ''
+          }`}
         >
           Женщины
         </p>
         <p
           onClick={() => changeGender('men')}
-          className={`sideBar__lang-link ${gender === 'men' ? 'active' : ''}`}
+          className={`sideBar__lang-link ${
+            state.catalog.gender === 'men' ? 'active' : ''
+          }`}
         >
           Мужчины
-        </p>    
+        </p>
       </div>
       <ul className="sidebar__menu">
         <SideBarItem value={'t-short'} text={t('catalog.aside3')} />

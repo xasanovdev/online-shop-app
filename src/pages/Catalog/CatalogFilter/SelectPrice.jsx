@@ -8,12 +8,14 @@ import { useContext } from 'react';
 import { CustomContext } from '../../../utils/context';
 
 export default function SelectPrice() {
-  const {price,setPrice,setPage} = useContext(CustomContext)
+  const { state, dispatch } = useContext(CustomContext);
 
   const changeHandler = (e) => {
-    setPrice(e.target.value)
-    setPage(1)
-  }
+    dispatch({
+      type: 'changePrice',
+      payload: { page: 1, price: e.target.value },
+    });
+  };
 
   return (
     <Box sx={{ minWidth: 120 }}>
@@ -22,7 +24,7 @@ export default function SelectPrice() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={price}
+          value={state.catalog.price}
           label="Age"
           onChange={changeHandler}
         >

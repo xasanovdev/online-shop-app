@@ -8,11 +8,21 @@ import { useContext } from 'react';
 import { CustomContext } from '../../../utils/context';
 
 export default function SelectSize() {
-  const { size, setSize, category, setPage } = useContext(CustomContext);
+  const { state, dispatch} =
+    useContext(CustomContext);
 
   const handleChange = (event) => {
-    setSize(event.target.value);
-    setPage(1);
+    dispatch({
+      type: 'changeSize',
+      payload: {
+        size: event.target.value,
+        length: state.catalog.products.data.filter((item) => {
+          return event.target.value
+            ? item.sizes.find((el) => el.size == event.target.value).inStock
+            : item;
+        }).length,
+      },
+    });
   };
 
   return (
@@ -20,11 +30,11 @@ export default function SelectSize() {
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Size</InputLabel>
 
-        {category === 'shoes' ? (
+        {state.catalog.category === 'shoes' ? (
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={size}
+            value={state.catalog.size}
             label="Age"
             onChange={handleChange}
           >
@@ -36,11 +46,12 @@ export default function SelectSize() {
             <MenuItem value={42}>42</MenuItem>
             <MenuItem value={''}>Remove</MenuItem>
           </Select>
-        ) : category === 't-short' || category === 'sweatshirts' ? (
+        ) : state.catalog.category === 't-short' ||
+          state.catalog.category === 'sweatshirts' ? (
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={size}
+            value={state.catalog.size}
             label="Age"
             onChange={handleChange}
           >
@@ -52,11 +63,11 @@ export default function SelectSize() {
             <MenuItem value="XXL">XXL</MenuItem>
             <MenuItem value={''}>Remove</MenuItem>
           </Select>
-        ) : category === 'pants' ? (
+        ) : state.catalog.category === 'pants' ? (
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={size}
+            value={state.catalog.size}
             label="Age"
             onChange={handleChange}
           >
