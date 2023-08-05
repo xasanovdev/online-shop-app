@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Card from '../../../components/Card/Card';
+import CatalogCard from '../../../components/CatalogCard/CatalogCard';
 import { CustomContext } from '../../../utils/context';
 
 export default function CatalogMain() {
@@ -23,7 +23,7 @@ export default function CatalogMain() {
                     index > state.catalog.page * 6 - 7;
             })
             .map((product) => (
-              <Card
+              <CatalogCard
                 key={product.id}
                 id={product.id}
                 brand={product.brand}
@@ -35,7 +35,7 @@ export default function CatalogMain() {
       </div>
       <ul className="catalog__pagination">
         {Math.ceil(state.catalog.products.dataLength / 6) > 1 &&
-          new Array(Math.floor(state.catalog.products.dataLength / 6))
+          new Array(Math.ceil(state.catalog.products.dataLength / 6))
             .fill(null)
             .map((item, idx) => (
               <li

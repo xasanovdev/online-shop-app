@@ -5,10 +5,14 @@
 @import 'catalog';
 @import 'sideBar';
 @import 'catalogMain';
-@import 'card';
+@import 'catalogCard';
+@import 'favoritesCard';
 @import 'catalogFilter';
 @import 'product';
 @import 'footer';
+@import 'favorites';
+@import 'button';
+@import 'notFoundFavorites';
 
 * {
   padding: 0;

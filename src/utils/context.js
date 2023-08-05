@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createContext, useReducer, useState } from 'react';
+import { createContext, useReducer } from 'react';
 
 export const CustomContext = createContext();
 
@@ -105,6 +105,30 @@ export const reducer = (state, action) => {
           page: action.payload,
         },
       };
+
+    case 'setFavorite':
+      return {
+        ...state,
+        favorites: {
+          data: [
+            ...state.favorites.data,
+            state.catalog.products.data.find((el) => el.id == action.payload),
+          ],
+          dataLength: state.favorites.dataLength + 1,
+        },
+      };
+
+    case 'deleteFavorite':
+      return {
+        ...state,
+        favorites: {
+          data: state.favorites.data.filter(
+            (favorite) => favorite.id != action.payload
+          ),
+          dataLength: state.favorites.dataLength - 1,
+        },
+      };
+
     default:
       return state;
   }
@@ -131,6 +155,10 @@ const Context = ({ children }) => {
           dataLength: 0,
         },
       },
+      favorites: {
+        data: [],
+        dataLength: 0,
+      },
     },
     init
   );
@@ -140,6 +168,13 @@ const Context = ({ children }) => {
   };
   const changeCategory = (category) => {
     dispatch({ type: 'changeCategory', payload: category });
+  };
+
+  const setProductForFavorites = (id) => {
+    dispatch({ type: 'setFavorite', payload: id });
+  };
+  const deleteProductForFavorites = (id) => {
+    dispatch({ type: 'deleteFavorite', payload: id });
   };
 
   const getProducts = () => {
@@ -176,6 +211,8 @@ const Context = ({ children }) => {
     changeGender,
     changeCategory,
     getProducts,
+    setProductForFavorites,
+    deleteProductForFavorites,
   };
   return (
     <>

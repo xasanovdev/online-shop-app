@@ -8,6 +8,7 @@ import Catalog from './pages/Catalog/Catalog';
 import NotFound from './pages/NotFound/NotFound';
 import './i18n/i18n'
 import Product from './pages/Product/Product';
+import Favorites from './pages/Favorites/Favorites';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="catalog" element={<Catalog />} />
+          <Route path="favorites" element={<Favorites />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="*" element={<NotFound />} />
         </Route>

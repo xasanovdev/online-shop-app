@@ -1,4 +1,5 @@
-.card {
+.catalog__card {
+  position: relative;
   &__title {
     display: flex;
     align-items: center;
@@ -37,5 +38,11 @@
       object-fit: cover;
       height: 400px;
     }
+  }
+  &__like {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
   }
 }

@@ -1,0 +1,38 @@
+.notFound {
+  text-align: center;
+
+  &__title {
+    color: var(--5, #0f303f);
+    margin-top: 45px;
+    text-align: center;
+    font-family: Avenir;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 25px */
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+  }
+  &__img {
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__subtitle {
+    padding-top: 41px;
+    padding-bottom: 19px;
+    color: var(--1, #254a5a);
+    text-align: center;
+    font-family: Avenir;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    max-width: 376px;
+    margin: auto;
+    line-height: 140%; /* 19.6px */
+  }
+
+
+}

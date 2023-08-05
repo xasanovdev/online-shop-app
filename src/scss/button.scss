@@ -1,0 +1,26 @@
+.btn {
+  width: 280px;
+  padding: 14px 21px;
+  border: 1px solid #0f303f;
+  background: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #0f303f;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+
+  &__buy {
+    background: #0f303f;
+    color: #eae9e8;
+    &:hover {
+      color: #0f303f;
+      background-color: white;
+    }
+  }
+
+  &:hover {
+    background: #0f303f;
+    color: #eae9e8;
+  }
+}

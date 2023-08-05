@@ -1,0 +1,78 @@
+.favorites__card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 55px 0;
+  border: 1px solid #cecece;
+  @media screen and (max-width: 550px) {
+    & {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 29px;
+    @media screen and (max-width: 550px) {
+      & {
+        align-items: center;
+      }
+    }
+    &-link {
+      font-weight: bolder;
+      font-size: 20px;
+    }
+    &-cost {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+    .cost-del {
+      color: #cecece;
+      text-align: center;
+      font-family: Jost;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.63px;
+      text-transform: uppercase;
+    }
+    .cost-active {
+      color: red;
+    }
+  }
+  &__img {
+    position: relative;
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 200px;
+    }
+  }
+  &__like {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+  }
+  &__button__add {
+    margin-top: 13px;
+  }
+
+  &__delete {
+    cursor: pointer;
+    position: absolute;
+    top: -40px;
+    right: 0px;
+    p {
+      font-size: 30px;
+    }
+  }
+}

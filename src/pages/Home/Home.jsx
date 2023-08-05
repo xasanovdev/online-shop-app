@@ -5,7 +5,7 @@ import popularImage2 from '../../assets/image 38.png';
 import popularImage3 from '../../assets/image 39.png';
 import popularImage4 from '../../assets/image 37.png';
 import aboutImage from '../../assets/image25.png';
-import Card from '../../components/Card/Card';
+import Card from '../../components/CatalogCard/CatalogCard';
 import { useTranslation } from 'react-i18next';
 
 function Home() {
