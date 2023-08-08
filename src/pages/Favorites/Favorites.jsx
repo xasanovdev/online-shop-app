@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { CustomContext } from '../../utils/context';
 import FavoritesCard from '../../components/FavoritesCard/FavoritesCard';
-import NotFoundFavorites from './NotFoundFavorites'
+import EmptyComposition from '../../components/EmptyComposition/EmptyComposition'
 
 export default function Favorites() {
   const { state, dispatch } = useContext(CustomContext);
@@ -20,7 +20,9 @@ export default function Favorites() {
               img={favorite.img}
               price={favorite.price}
             />
-        )) : <NotFoundFavorites/>
+        )) : (
+          <EmptyComposition/>
+        )
       }
       </div>
     </section>

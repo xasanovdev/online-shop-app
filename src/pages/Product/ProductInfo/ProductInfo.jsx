@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { CustomContext } from '../../../utils/context';
 import Button from '../../../components/Button/Button';
 const ProductInfo = ({ product }) => {
-  const { setProductForCarts } = useContext(CustomContext);
+  const { setProductForOrders } = useContext(CustomContext);
 
   const { t, i18n } = useTranslation();
 
@@ -40,10 +40,22 @@ const ProductInfo = ({ product }) => {
       </ul>
       <div className="product__btns">
         <div>
-          <Button title={t('product.btn1')} />
+          <button
+            className="btn btn__cart"
+            onClick={() => {
+              if (size) {
+                setProductForOrders({ ...product, size });
+                setSize('')
+              } else {
+                alert('Выберите размер');
+              }
+            }}
+          >
+            {t('product.btn1')}
+          </button>
         </div>
         <div>
-          <Button title={t('product.btn2')} classNameColor='btn__buy'/>
+          <button className="btn btn__cart btn__buy">{t('product.btn2')}</button>
         </div>
       </div>
     </div>

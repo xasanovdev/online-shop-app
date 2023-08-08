@@ -1,11 +1,11 @@
-.favorites__card {
+.favorites__card,
+.orders__card {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 25px;
   padding: 55px 0;
-  border: 1px solid #cecece;
   @media screen and (max-width: 550px) {
     & {
       flex-direction: column;

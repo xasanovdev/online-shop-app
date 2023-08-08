@@ -129,6 +129,26 @@ export const reducer = (state, action) => {
         },
       };
 
+    case 'setOrder':
+      return {
+        ...state,
+        orders: {
+          data: [
+            ...state.orders.data.filter((product) => product.id != action.payload.id),
+            action.payload,
+          ],
+          dataLength: state.orders.dataLength + 1,
+        },
+      };
+    case 'deleteOrder':
+      return {
+        ...state,
+        orders: {
+          data: state.orders.data.filter((order) => order.id != action.payload),
+        },
+        dataLength: state.orders.dataLength - 1,
+      };
+
     default:
       return state;
   }
@@ -159,6 +179,10 @@ const Context = ({ children }) => {
         data: [],
         dataLength: 0,
       },
+      orders: {
+        data: [],
+        dataLength: 0,
+      },
     },
     init
   );
@@ -175,6 +199,13 @@ const Context = ({ children }) => {
   };
   const deleteProductForFavorites = (id) => {
     dispatch({ type: 'deleteFavorite', payload: id });
+  };
+
+  const setProductForOrders = (product) => {
+    dispatch({ type: 'setOrder', payload: product });
+  };
+  const deleteProductForOrders = (id) => {
+    dispatch({ type: 'deleteOrder', payload: id });
   };
 
   const getProducts = () => {
@@ -213,6 +244,8 @@ const Context = ({ children }) => {
     getProducts,
     setProductForFavorites,
     deleteProductForFavorites,
+    setProductForOrders,
+    deleteProductForOrders,
   };
   return (
     <>

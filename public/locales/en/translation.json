@@ -37,7 +37,9 @@
   "cart": {
     "title": "Your cart is empty",
     "text": "Add something to save time and make <br/> shopping even more enjoyable.",
-    "btn": "Go to catalog"
+    "btn": "Go to catalog",
+    "favorites":"Favorites",
+    "orders":"Orders"
   },
   "product": {
     "btn1": "add to cart",

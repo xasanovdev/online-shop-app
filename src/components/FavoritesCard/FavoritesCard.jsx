@@ -14,7 +14,7 @@ export default function FavoritesCard({
   category,
 }) {
   const { t, i18n } = useTranslation();
-  const { setProductForFavorites, deleteProductForFavorites } =
+  const { state, setProductForOrders, deleteProductForFavorites } =
     useContext(CustomContext);
 
   return (
@@ -38,7 +38,16 @@ export default function FavoritesCard({
             </span>
           </p>
           <div className="favorites__card__button__add">
-            <Button title={t('product.btn1')} />
+            <button
+              className="btn btn__cart"
+              onClick={() =>
+                setProductForOrders(
+                  state.catalog.products.data.find((item) => item.id == id)
+                )
+              }
+            >
+              {t('product.btn1')}{' '}
+            </button>
           </div>
           <div className="favorites__card__delete">
             <p onClick={() => deleteProductForFavorites(id)}>x</p>

@@ -1,12 +1,16 @@
 import React from 'react'
-import Button from '../../components/Button/Button';
+import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function NotFoundFavorites() {
+
+  const {t} = useTranslation()
+
   return (
     <div className="notFound">
       <div className="notFound__container container">
-        <h1 className="notFound__title">Ваша корзина пуста</h1>
+        <h1 className="notFound__title">{t('cart.title')}</h1>
         <div className="notFound__img">
           <svg
             width="114"
@@ -65,14 +69,10 @@ export default function NotFoundFavorites() {
             </defs>
           </svg>
         </div>
-        <p className="notFound__subtitle">
-          Добавьте что-то, чтобы сэкономить время и сделать шопинг еще более
-          приятным.
-        </p>
-        <Link to='/catalog'>
-          <Button classNameColor="btn__buy" title="перейти в каталог" />
+        <p className="notFound__subtitle">{t('cart.text')}</p>
+        <Link to="/catalog">
+          <button className="btn btn__buy btn__cart">{t('cart.btn')}</button>
         </Link>
-
       </div>
     </div>
   );
