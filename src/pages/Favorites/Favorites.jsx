@@ -3,9 +3,11 @@ import { useContext } from 'react';
 import { CustomContext } from '../../utils/context';
 import FavoritesCard from '../../components/FavoritesCard/FavoritesCard';
 import EmptyComposition from '../../components/EmptyComposition/EmptyComposition'
+import { useTranslation } from 'react-i18next';
 
 export default function Favorites() {
   const { state, dispatch } = useContext(CustomContext);
+  const {t} = useTranslation()
 
   return (
     <section className="favorites">
@@ -21,7 +23,9 @@ export default function Favorites() {
               price={favorite.price}
             />
         )) : (
-          <EmptyComposition/>
+          <EmptyComposition>
+            <h1>{t("cart.favorites")}</h1>
+          </EmptyComposition>
         )
       }
       </div>

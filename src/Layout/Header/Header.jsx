@@ -72,12 +72,9 @@ const Header = () => {
               <Link to="/catalog" className="header__menu-link">
                 {t('header.link2')}
               </Link>
-<label className="header__search">
+              <label className="header__search">
                 <span className="header__search-text">{t('header.link4')}</span>
-                <input
-                  className="header__search-field"
-                  type="text"
-                />
+                <input className="header__search-field" type="text" />
               </label>
             </div>
           </nav>

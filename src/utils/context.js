@@ -134,7 +134,9 @@ export const reducer = (state, action) => {
         ...state,
         orders: {
           data: [
-            ...state.orders.data.filter((product) => product.id != action.payload.id),
+            ...state.orders.data.filter(
+              (product) => product.size != action.payload.size
+            ),
             action.payload,
           ],
           dataLength: state.orders.dataLength + 1,
@@ -145,10 +147,15 @@ export const reducer = (state, action) => {
         ...state,
         orders: {
           data: state.orders.data.filter((order) => order.id != action.payload),
+          dataLength: state.orders.dataLength - 1,
         },
-        dataLength: state.orders.dataLength - 1,
       };
 
+    case 'resetOrders':
+      return {
+        ...state,
+        orders: { data: [], dataLength: 0 },
+      };
     default:
       return state;
   }

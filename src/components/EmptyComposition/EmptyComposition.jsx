@@ -1,16 +1,15 @@
-import React from 'react'
+import React from 'react';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-export default function NotFoundFavorites() {
-
-  const {t} = useTranslation()
+export default function NotFoundFavorites({ children }) {
+  const { t } = useTranslation();
 
   return (
     <div className="notFound">
       <div className="notFound__container container">
-        <h1 className="notFound__title">{t('cart.title')}</h1>
+        <div className="notFound__title">{children}</div>
         <div className="notFound__img">
           <svg
             width="114"

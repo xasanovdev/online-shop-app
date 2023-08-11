@@ -36,10 +36,10 @@
   },
   "cart": {
     "title": "Your cart is empty",
-    "text": "Add something to save time and make <br/> shopping even more enjoyable.",
+    "text": "Add something to save time and make shopping even more enjoyable.",
     "btn": "Go to catalog",
-    "favorites":"Favorites",
-    "orders":"Orders"
+    "favorites":"Your favorites is empty",
+    "orders":"Your orders is empty"
   },
   "product": {
     "btn1": "add to cart",
