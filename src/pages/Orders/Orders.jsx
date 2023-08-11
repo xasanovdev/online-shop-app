@@ -91,7 +91,6 @@ export default function Orders() {
                 <textarea
                   {...register('address', { required: true })}
                   onChange={(e) => setAddressText(e.target.value)}
-                  value={addressText}
                   placeholder="Address:"
                 ></textarea>
                 <span>{errors.address && 'address is required'}</span>

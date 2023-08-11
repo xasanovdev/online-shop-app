@@ -4883,6 +4883,17 @@
       ],
       "allPrice": 193,
       "id": 3
+    },
+    {
+      "name": "Ibrohim ",
+      "surname": "XASNOV",
+      "email": "XasanovIbrohim555@gmail.com",
+      "number": "97 007 20 45",
+      "address": "Zangi Ota tumani Nazarbek",
+      "pay": "cash",
+      "data": [],
+      "allPrice": 0,
+      "id": 4
     }
   ]
 }
