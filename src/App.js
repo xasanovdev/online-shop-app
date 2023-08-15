@@ -9,6 +9,7 @@ import NotFound from './pages/NotFound/NotFound';
 import './i18n/i18n';
 import Product from './pages/Product/Product';
 import Favorites from './pages/Favorites/Favorites';
+import CommonQuestions from './pages/Common/CommonQuestions';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="catalog" element={<Catalog />} />
           <Route path="favorites" element={<Favorites />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="common-questions" element={<CommonQuestions />} />
           <Route path="product/:id" element={<Product />} />
           <Route path="*" element={<NotFound />} />
         </Route>

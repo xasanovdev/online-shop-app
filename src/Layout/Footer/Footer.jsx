@@ -30,7 +30,7 @@ const Footer = () => {
             </Link>
           </li>
           <li className="footer__item">
-            <Link className="footer__link" to="questions">
+            <Link to='/common-questions' className="footer__link">
               {t('footer.link2')}
             </Link>
           </li>

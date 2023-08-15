@@ -7,7 +7,7 @@ export default function NotFoundFavorites({ children }) {
   const { t } = useTranslation();
 
   return (
-    <div className="notFound">
+    <div className="notFound container">
       <div className="notFound__container container">
         <div className="notFound__title">{children}</div>
         <div className="notFound__img">

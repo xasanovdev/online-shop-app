@@ -41,8 +41,8 @@ export default function Orders() {
   };
 
   return (
-    <section className="orders">
-      <div className="orders__content container">
+    <section className="orders container">
+      <div className="orders__content">
         <div className="orders__left">
           <form
             noValidate

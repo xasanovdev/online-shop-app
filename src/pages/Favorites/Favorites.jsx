@@ -10,8 +10,8 @@ export default function Favorites() {
   const {t} = useTranslation()
 
   return (
-    <section className="favorites">
-      <div className="favorites__content container">
+    <section className="favorites container">
+      <div className="favorites__content">
         {state.favorites.data.length >0 ? state.favorites.data.map((favorite) => (
             <FavoritesCard
               key={favorite.id}

@@ -12,6 +12,8 @@
 @import 'footer';
 @import 'shoppingContent';
 @import 'button';
+@import 'accordion';
+@import 'faq';
 @import 'notFoundFavorites';
 
 * {
@@ -20,16 +22,38 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
-  font-family: 'Cormorant', serif;  
-
+  font-family: 'Cormorant', serif;
 }
+html,
+body,
+#root {
+  height: 100%;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  flex-shrink: 0;
+}
+
+.container-header {
+  max-width: 1374px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .container {
   max-width: 1374px;
   margin: 0 auto;
   padding: 0 20px;
+  flex: 1 1 auto;
 }
 .container-small {
   max-width: 1137px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.orders,.favorites {
+  display: flex;
 }

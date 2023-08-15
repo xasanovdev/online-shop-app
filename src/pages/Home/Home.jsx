@@ -13,8 +13,8 @@ function Home() {
 
   return (
     <>
-      <div className="home ">
-        <div className="container">
+      <div className="home container">
+        <div className="">
           <div className="home__hero">
             <div className="home__hero-bg">
               <div className="home__title">
